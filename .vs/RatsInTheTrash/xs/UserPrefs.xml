@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{13D0CFFA-1F72-EA6B-B42B-A07AC0382D39}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MotionSerialRead.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Movement.cs" Line="18" Column="14" />
+      <File FileName="Assets/Scripts/MotionSerialRead.cs" Line="4" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
