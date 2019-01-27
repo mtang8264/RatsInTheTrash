@@ -52,15 +52,15 @@ public class DecorationHandler : MonoBehaviour
     {
         if(placing)
         {
-            Cursor.SetCursor(trash[placingIdx].GetComponent<Trash>().cursor, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(trash[placingIdx].GetComponent<Trash>().cursor, new Vector2(50,50), CursorMode.Auto);
             if(BeachClicker.over)
             {
-                Cursor.SetCursor(trashcan, Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(trashcan, new Vector2(50,50), CursorMode.Auto);
             }
         }
         else
         {
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(null, new Vector2(50,50), CursorMode.Auto);
         }
 
         if(Input.GetMouseButtonDown(0))
