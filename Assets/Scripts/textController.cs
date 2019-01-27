@@ -23,6 +23,11 @@ public class textController : MonoBehaviour
     public bool isActive;
     public Animator anim;
 
+    public AudioClip vSound1;
+    public AudioClip vSound2;
+    public AudioClip hSound1;
+    public AudioClip hSound2;
+
     // Use this for initialization
     void Start()
     {
@@ -33,6 +38,7 @@ public class textController : MonoBehaviour
 
     void Update()
     {
+
         if (isActive && Input.GetKeyDown(KeyCode.Space)) //press space to move the text forward C:
         {
             if (!isTyping)
@@ -105,14 +111,32 @@ public class textController : MonoBehaviour
 
         while (isTyping && !cancelTyping && (letter < lineoftext.Length - 1))
         {
+            if (lineoftext.Contains("Virgil"))
+            {
 
+            }
+            else if(lineoftext.Contains("Homer"))
+            {
+
+            }
+            else
+            {
+                
+            }
             theText.text += lineoftext[letter];
             letter += 1;
+            
+
             yield return new WaitForSeconds(textSpeed);
         }
 
         theText.text = lineoftext;
         isTyping = false;
         cancelTyping = false;
+    }
+
+    public void RandomizeSfx(AudioClip sound1, AudioClip sound2)
+    {
+
     }
 }
