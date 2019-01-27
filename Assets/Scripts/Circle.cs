@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Circle : MonoBehaviour
 {
+    bool over;
+
     public int lastQuad = -1;
     public int currentQuad = -1;
     public List<int> quadrants = new List<int>();
@@ -22,6 +24,9 @@ public class Circle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (over)
+            quadrants = new List<int>();
+
         if(reel.position.x > transform.position.x)
         {
             if(reel.position.y > transform.position.y)
@@ -103,5 +108,14 @@ public class Circle : MonoBehaviour
             DecorationHandler.toPlace = GetComponent<FishingSpot>().floater;
             SceneManager.LoadScene(0);
         }
+    }
+
+    private void OnMouseOver()
+    {
+        over = true;
+    }
+    private void OnMouseExit()
+    {
+        over = false;
     }
 }
