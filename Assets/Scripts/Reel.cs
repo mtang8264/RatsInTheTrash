@@ -22,10 +22,10 @@ public class Reel : MonoBehaviour
                 transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 break;
             case gameController.ControlScheme.PS4L:
-                transform.position = fisher.position + new Vector3(Input.GetAxis("LH"), Input.GetAxis("LV")) * 5;
+                transform.position = fisher.position + new Vector3(Input.GetAxis("LH"), Input.GetAxis("LV")) * 2.5f;
                 break;
             case gameController.ControlScheme.PS4R:
-                transform.position = fisher.position + new Vector3(Input.GetAxis("RH"), Input.GetAxis("RV")) * 5;
+                transform.position = fisher.position + new Vector3(Input.GetAxis("RH"), Input.GetAxis("RV")) * 2.5f;
                 break;
         }
         transform.position = new Vector3(transform.position.x, transform.position.y, 5);
