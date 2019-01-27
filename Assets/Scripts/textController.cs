@@ -28,7 +28,6 @@ public class textController : MonoBehaviour
     {
         anim = textBox.GetComponent<Animator>();
         textLines = dialogueDoc.text.Split('\n');
-        ///EnableTextBox(0,6);
        
     }
 

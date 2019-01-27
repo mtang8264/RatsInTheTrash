@@ -2,11 +2,10 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BeachClicker.cs">
     <Files>
       <File FileName="Assets/Scripts/textController.cs" Line="86" Column="41" />
-      <File FileName="Assets/Scripts/DecorationHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DecorationHandler.cs" Line="55" Column="1" />
       <File FileName="Assets/Scripts/FishingSpot.cs" Line="26" Column="1" />
       <File FileName="Assets/Scripts/TextFile.txt" Line="50" Column="7" />
-      <File FileName="Assets/gameController.cs" Line="19" Column="60" />
-      <File FileName="Assets/Scripts/Circle.cs" Line="48" Column="39" />
+      <File FileName="Assets/Scripts/Circle.cs" Line="31" Column="49" />
       <File FileName="Assets/Scripts/ThrowAway.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BeachClicker.cs" Line="44" Column="1" />
     </Files>
