@@ -13,7 +13,7 @@ public class FishingSpot : MonoBehaviour
         {
             floater = Random.Range(0, 10);
 
-            if(DecorationHandler.trash2[floater].GetComponent<Trash>().gotten)
+            if(gameController.collectedItems[floater].got)
             {
                 floater = -1;
             }

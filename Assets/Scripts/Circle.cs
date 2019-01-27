@@ -47,7 +47,7 @@ public class Circle : MonoBehaviour
                 if(GameObject.Find("BackgroundCover").GetComponent<SpriteRenderer>().size.y >= 7.6)
                 {
                     gc.lostItem = true;
-                    SceneManager.LoadScene(0);
+                    SceneManager.LoadScene("Home");
                 }
             }
         }
@@ -144,7 +144,7 @@ public class Circle : MonoBehaviour
                 gc.toPlace = GetComponent<FishingSpot>().floater;
                 //DecorationHandler.toPlace = GetComponent<FishingSpot>().floater;
                 GameObject.Find("Sound").GetComponent<Sounds>().StopReel();
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene("Home");
             }
         }
     }

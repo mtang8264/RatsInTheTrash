@@ -17,7 +17,7 @@ public class DecorationHandler : MonoBehaviour
     public bool placing = false;
     public int placingIdx = -1;
 
-    public Texture2D trashcan;
+    public Texture2D trashcan, rod;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,7 @@ public class DecorationHandler : MonoBehaviour
             {
                 Instantiate(trash[decorations[i].index]).transform.position = new Vector3(decorations[i].position[0], decorations[i].position[1], 5);
                 trash[decorations[i].index].GetComponent<Trash>().gotten = true;
+                gameController.collectedItems[decorations[i].index].got = true;
             }
         }
 
@@ -57,6 +58,10 @@ public class DecorationHandler : MonoBehaviour
             {
                 Cursor.SetCursor(trashcan, new Vector2(50,50), CursorMode.Auto);
             }
+        }
+        else if(BeachClicker.over)
+        {
+            Cursor.SetCursor(rod, new Vector2(50, 50), CursorMode.Auto);
         }
         else
         {

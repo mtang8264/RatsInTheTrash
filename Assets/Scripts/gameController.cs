@@ -23,6 +23,22 @@ public class gameController : MonoBehaviour
 
     public enum ControlScheme { MOUSE, PS4L, PS4R };
 
+    public static TrashGet[] collectedItems = {
+        new TrashGet("box"),
+        new TrashGet("computer"),
+        new TrashGet("duck"),
+        new TrashGet("eet"),
+        new TrashGet("fpoon"),
+        new TrashGet("glowstick"),
+        new TrashGet("lid"),
+        new TrashGet("log"),
+        new TrashGet("message"),
+        new TrashGet("phone"),
+        new TrashGet("pumice"),
+        new TrashGet("ringpop"),
+        new TrashGet("sardines")
+    };
+
 	// Use this for initialization
 	void Start () 
     {
@@ -103,4 +119,16 @@ public class gameController : MonoBehaviour
             grabScripts = false; 
         }
 	}
+}
+
+public class TrashGet
+{
+    public string name;
+    public bool got;
+
+    public TrashGet(string s)
+    {
+        name = s;
+        got = false;
+    }
 }
