@@ -61,5 +61,12 @@ MonoBehaviour:
   textLines: []
   theText: {fileID: 0}
   textBox: {fileID: 0}
+  screenOverlay: {fileID: 0}
   isActive: 0
   anim: {fileID: 0}
+  panelAnim: {fileID: 0}
+  vSound1: {fileID: 8300000, guid: aa5629a1944204d39940a16d913a158e, type: 3}
+  vSound2: {fileID: 8300000, guid: dc99b47c835df4ab39354982b6e37b42, type: 3}
+  hSound1: {fileID: 8300000, guid: 2c6cbef87adb14ca785f2262489e71b0, type: 3}
+  hSound2: {fileID: 8300000, guid: 6775fa1259d794db1a59cab37d18264b, type: 3}
+  rubberDucky: {fileID: 8300000, guid: 1d8ac5cdcdd284f9a91787c74dca39b8, type: 3}
