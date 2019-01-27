@@ -28,7 +28,7 @@ public class textController : MonoBehaviour
     {
         anim = textBox.GetComponent<Animator>();
         textLines = dialogueDoc.text.Split('\n');
-        EnableTextBox(0,6);
+        ///EnableTextBox(0,6);
        
     }
 
@@ -39,7 +39,7 @@ public class textController : MonoBehaviour
             if (!isTyping)
             {
                 currentLine += 1;
-                if (currentLine + 1 == endLine)
+                if (currentLine == endLine)
                 {
                     DisableTextBox();
                 }
@@ -84,7 +84,7 @@ public class textController : MonoBehaviour
         isActive = false;
         theText.text = "";
         anim.SetBool("isActive", false);
-        textBox.SetActive(false);
+        //textBox.SetActive(false);
 
     }
     public void GoBack()

@@ -23,9 +23,12 @@ public class Circle : MonoBehaviour
     public float startTime = 0f;
     float failTime = -1;
 
+    public gameController gc;
+
     // Start is called before the first frame update
     void Start()
     {
+        gc = FindObjectOfType<gameController>();
         startTime = Time.time;
 
         quadrants.RemoveRange(0,quadrants.Count);
@@ -43,6 +46,7 @@ public class Circle : MonoBehaviour
                 GameObject.Find("BackgroundCover").GetComponent<SpriteRenderer>().size += new Vector2(0,7.6f/2f) * Time.deltaTime;
                 if(GameObject.Find("BackgroundCover").GetComponent<SpriteRenderer>().size.y >= 7.6)
                 {
+                    gc.lostItem = true;
                     SceneManager.LoadScene(0);
                 }
             }
@@ -136,6 +140,7 @@ public class Circle : MonoBehaviour
 
             if (captured && quadrants.Count > rotation * 4 - 2)
             {
+                gc.lostItem = false;
                 DecorationHandler.toPlace = GetComponent<FishingSpot>().floater;
                 GameObject.Find("Sound").GetComponent<Sounds>().StopReel();
                 SceneManager.LoadScene(0);
