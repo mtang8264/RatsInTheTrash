@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class gameController : MonoBehaviour 
 {
+    public int toPlace = -1;
     public bool lostItem;
     public textController tc;
     public DecorationHandler decoration;
@@ -29,6 +30,12 @@ public class gameController : MonoBehaviour
                 tc = FindObjectOfType<textController>();
                 decoration = FindObjectOfType<DecorationHandler>();
                 grabScripts = true;
+            }
+            if(toPlace != -1)
+            {
+                decoration.placing = true;
+                decoration.placingIdx = toPlace;
+                toPlace = -1;
             }
             if (lostItem) // if you didnt capture anything
             {
