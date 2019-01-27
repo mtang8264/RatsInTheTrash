@@ -7,13 +7,14 @@ public class BeachClicker : MonoBehaviour
 {
     public DecorationHandler decoration;
     public Texture2D trash;
+    public gameController gc;
 
     public static bool over = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gc = FindObjectOfType<gameController>();
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class BeachClicker : MonoBehaviour
         {
             decoration.placing = false;
             decoration.placingIdx = -1;
+            gc.trashedItem = true;
         }
         else
         {

@@ -19,7 +19,7 @@ public class ThrowAway : MonoBehaviour
 
     void Des()
     {
-        if(Camera.main.GetComponent<DecorationHandler>().placing)
+        if (Camera.main.GetComponent<DecorationHandler>().placing)
         {
             Camera.main.GetComponent<DecorationHandler>().placing = false;
             Camera.main.GetComponent<DecorationHandler>().placingIdx = -1;

@@ -7,7 +7,7 @@ public class Sounds : MonoBehaviour
     public AudioClip mainTheme;
     public AudioClip splash;
     public AudioClip reel;
-    public AudioClip rubberDucky;
+    public AudioClip fishingTheme;
 
     AudioSource music;
     AudioSource fx;

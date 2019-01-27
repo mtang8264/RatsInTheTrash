@@ -6,8 +6,8 @@ public class Trash : MonoBehaviour
 {
     public int idx;
     public string name;
-    public AudioClip[] conversation;
-    public string[] transcript;
+    public int startLine;
+    public int endLine;
     public Texture2D cursor;
     public bool gotten = false;
 

@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 using UnityEngine.SceneManagement;
+
 
 public class gameController : MonoBehaviour 
 {
@@ -9,10 +13,12 @@ public class gameController : MonoBehaviour
     public bool lostItem;
     public textController tc;
     public DecorationHandler decoration;
-    public bool trashedItem;
+    public bool trashedItem; //did u trash a thing
 
-    public int numPlaced; //number of objects placed
-    public bool grabScripts;
+    public bool didCount; //happens once after an item is put down
+
+    public bool grabScripts; //so that the textmanager and decorations handler can be accessed w/o errors
+
     public ControlScheme controlScheme = ControlScheme.MOUSE;
 
     public enum ControlScheme { MOUSE, PS4L, PS4R };
@@ -40,6 +46,7 @@ public class gameController : MonoBehaviour
                 decoration.placingIdx = toPlace;
                 toPlace = -1;
             }
+
             if (lostItem) // if you didnt capture anything
             {
                 tc.EnableTextBox(15, 16);
@@ -47,46 +54,53 @@ public class gameController : MonoBehaviour
             }
             else
             {
-                if (decoration.placing) // if you capture...
+                if (trashedItem) //...and throw it away
                 {
-                    if (trashedItem) //...and throw it away
-                    {
-                        tc.EnableTextBox(16, 18);
-                    }
-                    else///hhh
-                    {
-
-                    }
+                    tc.EnableTextBox(16, 18);
+                    trashedItem = false;
                 }
 
-                else if (!tc.isActive && !decoration.placing) // timer acknowledgement
+                else if (Input.GetMouseButtonDown(0) && !trashedItem)
                 {
-                    if (numPlaced == 1)
+                    int startLine = decoration.trash[decoration.placingIdx].GetComponent<Trash>().startLine;
+                    int endLine = decoration.trash[decoration.placingIdx].GetComponent<Trash>().endLine;
+
+                    tc.EnableTextBox(startLine, endLine);
+                }
+
+                else if (!tc.isActive && !decoration.placing && !didCount) // timer acknowledgement
+                {
+                    if (decoration.decorations.Count == 1)
                     {
                         tc.EnableTextBox(18,19);
                     }
-                    else if (numPlaced == 2)
+                    else if (decoration.decorations.Count == 2)
                     {
                         tc.EnableTextBox(19,20);
                     }
-                    else if (numPlaced == 3)
+                    else if (decoration.decorations.Count == 3)
                     {
                         tc.EnableTextBox(20,21);
                     }
-                    else if (numPlaced == 4)
+                    else if (decoration.decorations.Count == 4)
                     {
                         tc.EnableTextBox(21,22);
                     }
-                    else if (numPlaced == 5)
+                    else if (decoration.decorations.Count == 5)
                     {
                         tc.EnableTextBox(22,23);
+
+                        //File.Delete(Application.persistentDataPath + "/rats.rts");
+                        //SceneManager.LoadScene(0);
                     }
+                    didCount = true;
                 }
             }
         }
         else
         {
-            grabScripts = false;
+            didCount = false;
+            grabScripts = false; 
         }
 	}
 }

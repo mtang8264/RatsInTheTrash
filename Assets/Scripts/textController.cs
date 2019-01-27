@@ -19,6 +19,7 @@ public class textController : MonoBehaviour
 
     public Text theText;
     public GameObject textBox;
+    public GameObject screenOverlay;
 
     public bool isActive;
     public Animator anim;
@@ -27,6 +28,7 @@ public class textController : MonoBehaviour
     public AudioClip vSound2;
     public AudioClip hSound1;
     public AudioClip hSound2;
+    public AudioClip rubberDucky;
 
     // Use this for initialization
     void Start()
