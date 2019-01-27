@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayerID: -521596461
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 800edf135a4164fe88c2aa05fed11173, type: 3}
+  m_Sprite: {fileID: 21300024, guid: a71041fda90ad471f9a66ed7e847cf38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,4 +96,5 @@ MonoBehaviour:
   name: Ringpop
   conversation: []
   transcript: []
-  cursor: {fileID: 2800000, guid: 1273e0b9e1a384162b626eacc29ff81e, type: 3}
+  cursor: {fileID: 2800000, guid: afee58475d0054acfacf0b04711c9511, type: 3}
+  gotten: 0

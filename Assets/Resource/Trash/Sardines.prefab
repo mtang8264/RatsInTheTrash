@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayerID: -521596461
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8036e6bbffc441d0add167e4e571cae, type: 3}
+  m_Sprite: {fileID: 21300012, guid: a71041fda90ad471f9a66ed7e847cf38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,4 +96,5 @@ MonoBehaviour:
   name: Sardines
   conversation: []
   transcript: []
-  cursor: {fileID: 2800000, guid: 1c3908da495b44c5695a8e213e94ad69, type: 3}
+  cursor: {fileID: 2800000, guid: 5378aafff15bd4f8ab2ed18064e14b9d, type: 3}
+  gotten: 0

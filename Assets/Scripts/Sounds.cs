@@ -33,4 +33,10 @@ public class Sounds : MonoBehaviour
         fx.clip = splash;
         fx.Play();
     }
+
+    public void StopReel()
+    {
+        if (fx.clip == reel)
+            fx.Stop();
+    }
 }

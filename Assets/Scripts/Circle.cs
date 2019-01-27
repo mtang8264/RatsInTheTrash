@@ -137,6 +137,7 @@ public class Circle : MonoBehaviour
             if (captured && quadrants.Count > rotation * 4 - 2)
             {
                 DecorationHandler.toPlace = GetComponent<FishingSpot>().floater;
+                GameObject.Find("Sound").GetComponent<Sounds>().StopReel();
                 SceneManager.LoadScene(0);
             }
         }

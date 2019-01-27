@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayerID: -521596461
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51c3e9005ff914a8a90f899ec278a5e5, type: 3}
+  m_Sprite: {fileID: 21300008, guid: a71041fda90ad471f9a66ed7e847cf38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,4 +96,5 @@ MonoBehaviour:
   name: Glowstick
   conversation: []
   transcript: []
-  cursor: {fileID: 2800000, guid: 291d0ddb74831402cafdf5a2034dcaa4, type: 3}
+  cursor: {fileID: 2800000, guid: 7dac887ca1e844d3b9b06b6915688416, type: 3}
+  gotten: 0
