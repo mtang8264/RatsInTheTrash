@@ -13,6 +13,9 @@ public class gameController : MonoBehaviour
 
     public int numPlaced; //number of objects placed
     public bool grabScripts;
+    public ControlScheme controlScheme = ControlScheme.MOUSE;
+
+    public enum ControlScheme { MOUSE, PS4L, PS4R };
 
 	// Use this for initialization
 	void Start () 
