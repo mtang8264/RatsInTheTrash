@@ -41,6 +41,7 @@ public class BeachClicker : MonoBehaviour
         else
         {
             over = false;
+            GameObject.Find("Sound").GetComponent<Sounds>().GoToBeach();
             SceneManager.LoadScene(1);
         }
     }

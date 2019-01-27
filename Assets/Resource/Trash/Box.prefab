@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayerID: -521596461
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 703aef104946b41158b0d7384a72e5ea, type: 3}
+  m_Sprite: {fileID: 21300004, guid: a71041fda90ad471f9a66ed7e847cf38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,7 +92,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d204bc305b994d7597133ccdfbaffa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idx: 0
   name: Box
   conversation: []
   transcript: []
-  cursor: {fileID: 2800000, guid: 9562d9b11b7a440e292af34b9f960a28, type: 3}
+  cursor: {fileID: 2800000, guid: 9c130a9f14b4745e78726f6b42c691d7, type: 3}
+  gotten: 0
