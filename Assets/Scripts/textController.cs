@@ -24,6 +24,8 @@ public class textController : MonoBehaviour
     public bool isActive;
     public Animator anim;
 
+    public Animator panelAnim;
+
     public AudioClip vSound1;
     public AudioClip vSound2;
     public AudioClip hSound1;
@@ -33,6 +35,7 @@ public class textController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        panelAnim = screenOverlay.GetComponent<Animator>();
         anim = textBox.GetComponent<Animator>();
         textLines = dialogueDoc.text.Split('\n');
        

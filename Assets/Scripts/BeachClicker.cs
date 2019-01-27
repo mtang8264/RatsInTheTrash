@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BeachClicker : MonoBehaviour
 {
@@ -42,9 +43,9 @@ public class BeachClicker : MonoBehaviour
         }
         else
         {
+            gc.tc.panelAnim.SetBool("fadeBlack", true);
             over = false;
             GameObject.Find("Sound").GetComponent<Sounds>().GoToBeach();
-            SceneManager.LoadScene("Fishing");
         }
     }
 }

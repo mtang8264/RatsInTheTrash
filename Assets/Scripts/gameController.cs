@@ -5,10 +5,13 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class gameController : MonoBehaviour 
 {
+    public bool gotWashed;
+    public bool startTut;
     public int toPlace = -1;
     public bool lostItem;
     public textController tc;
@@ -50,18 +53,42 @@ public class gameController : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Home")
         {
-            if(!grabScripts)
+            if (!grabScripts)
             {
+
                 tc = FindObjectOfType<textController>();
                 decoration = FindObjectOfType<DecorationHandler>();
+
                 grabScripts = true;
             }
-            if(toPlace != -1)
+
+            if (toPlace != -1)
             {
                 decoration.placing = true;
                 decoration.placingIdx = toPlace;
                 toPlace = -1;
             }
+
+
+            if (tc.screenOverlay.GetComponent<Image>().color == Color.black) // go to the fishing scene
+            {
+                if (decoration.decorations.Count == 0)
+                {
+                    SceneManager.LoadScene("Tutorial");
+                }
+                else
+                {
+                    SceneManager.LoadScene("Fishing");
+                }
+            }
+
+            if (tc.screenOverlay.GetComponent<Image>().color == Color.white) //restart
+            {
+                gotWashed = false;
+                File.Delete(Application.persistentDataPath + "/rats.rts");
+                SceneManager.LoadScene("WashedUp");
+            }
+
 
             if (lostItem) // if you didnt capture anything
             {
@@ -76,7 +103,7 @@ public class gameController : MonoBehaviour
                     trashedItem = false;
                 }
 
-                else if (Input.GetMouseButtonDown(0) && !trashedItem)
+                else if (Input.GetMouseButtonDown(0) && !trashedItem && decoration.placing)
                 {
                     int startLine = decoration.trash[decoration.placingIdx].GetComponent<Trash>().startLine;
                     int endLine = decoration.trash[decoration.placingIdx].GetComponent<Trash>().endLine;
@@ -88,31 +115,64 @@ public class gameController : MonoBehaviour
                 {
                     if (decoration.decorations.Count == 1)
                     {
-                        tc.EnableTextBox(18,19);
+                        tc.EnableTextBox(18, 19);
                     }
                     else if (decoration.decorations.Count == 2)
                     {
-                        tc.EnableTextBox(19,20);
+                        tc.EnableTextBox(19, 20);
                     }
                     else if (decoration.decorations.Count == 3)
                     {
-                        tc.EnableTextBox(20,21);
+                        tc.EnableTextBox(20, 21);
                     }
                     else if (decoration.decorations.Count == 4)
                     {
-                        tc.EnableTextBox(21,22);
+                        tc.EnableTextBox(21, 22);
                     }
                     else if (decoration.decorations.Count == 5)
                     {
-                        tc.EnableTextBox(22,23);
-
-                        //File.Delete(Application.persistentDataPath + "/rats.rts");
-                        //SceneManager.LoadScene(0);
+                        tc.EnableTextBox(22, 23);
                     }
                     didCount = true;
                 }
+                else if (decoration.decorations.Count == 5 && didCount) // restarting the gamee
+                {
+                    tc.panelAnim.SetBool("fadeWhite", true);
+                }
             }
         }
+        else if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            if (!startTut)
+            {
+                didCount = false;
+                grabScripts = false;
+                tc = FindObjectOfType<textController>();
+                tc.EnableTextBox(11, 15);
+                startTut = true;
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "WashedUp")
+        {
+            if (!gotWashed)
+            {
+                startTut = false;
+                didCount = false;
+                grabScripts = false;
+                tc = FindObjectOfType<textController>();
+                tc.EnableTextBox(0, 11);
+                gotWashed = true; // to make sure the text box doesnt keep starting up
+            }
+            if (gotWashed && !tc.isActive)
+            {
+                tc.panelAnim.SetBool("fadeBlack", true);
+            }
+            if (tc.screenOverlay.GetComponent<Image>().color == Color.black) // go to the fishing scene
+            {
+                SceneManager.LoadScene("Home");
+            }
+        }
+
         else
         {
             didCount = false;

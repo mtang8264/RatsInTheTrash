@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fishing.unity
     guid: bc401a16947264236abb0a2890b2104b
+  - enabled: 1
+    path: Assets/Scenes/WashedUp.unity
+    guid: 047c6cc9ba2ca4aa09ce1e2bdba33fbf
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 499e1fc3f585349718102d40a1ca0184
   m_configObjects: {}
